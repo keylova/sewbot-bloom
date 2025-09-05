@@ -16,10 +16,8 @@ export function TopBar() {
   return (
     <header className="h-16 bg-gradient-glass border-b border-glass-border backdrop-blur-md px-6 flex items-center justify-between sticky top-0 z-50">
       <div className="flex items-center gap-4">
-        <SidebarTrigger asChild>
-          <Button variant="ghost" size="icon" className="hover:bg-glass/50">
-            <Menu className="h-5 w-5" />
-          </Button>
+        <SidebarTrigger>
+          <Menu className="h-5 w-5" />
         </SidebarTrigger>
         
         <div className="relative w-80">

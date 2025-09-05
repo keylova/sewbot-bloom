@@ -111,31 +111,29 @@ export function AppSidebar() {
                 const active = isActive(item.url);
                 return (
                   <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild>
-                      <NavLink
-                        to={item.url}
-                        className={cn(
-                          "flex items-center gap-3 px-3 py-3 rounded-lg transition-all duration-300 group relative overflow-hidden",
-                          active 
-                            ? "bg-gradient-card border border-accent/30 text-accent shadow-glow" 
-                            : "hover:bg-glass/50 hover:text-accent-foreground text-muted-foreground hover:border hover:border-glass-border"
-                        )}
-                      >
-                        <item.icon className={cn(
-                          "w-5 h-5 transition-all duration-300",
-                          active ? "text-accent animate-glow-pulse" : "group-hover:text-accent"
-                        )} />
-                        {open && (
-                          <div className="flex flex-col animate-slide-in">
-                            <span className="font-medium text-sm">{item.title}</span>
-                            <span className="text-xs opacity-70">{item.description}</span>
-                          </div>
-                        )}
-                        {active && (
-                          <div className="absolute inset-0 bg-gradient-glow opacity-20 animate-glass-shine" />
-                        )}
-                      </NavLink>
-                    </SidebarMenuButton>
+                    <NavLink
+                      to={item.url}
+                      className={cn(
+                        "flex items-center gap-3 px-3 py-3 rounded-lg transition-all duration-300 group relative overflow-hidden",
+                        active 
+                          ? "bg-gradient-card border border-accent/30 text-accent shadow-glow" 
+                          : "hover:bg-glass/50 hover:text-accent-foreground text-muted-foreground hover:border hover:border-glass-border"
+                      )}
+                    >
+                      <item.icon className={cn(
+                        "w-5 h-5 transition-all duration-300",
+                        active ? "text-accent animate-glow-pulse" : "group-hover:text-accent"
+                      )} />
+                      {open && (
+                        <div className="flex flex-col animate-slide-in">
+                          <span className="font-medium text-sm">{item.title}</span>
+                          <span className="text-xs opacity-70">{item.description}</span>
+                        </div>
+                      )}
+                      {active && (
+                        <div className="absolute inset-0 bg-gradient-glow opacity-20 animate-glass-shine" />
+                      )}
+                    </NavLink>
                   </SidebarMenuItem>
                 );
               })}
@@ -151,22 +149,20 @@ export function AppSidebar() {
                 {bottomItems.map((item) => {
                   const active = isActive(item.url);
                   return (
-                    <SidebarMenuItem key={item.title}>
-                      <SidebarMenuButton asChild>
-                        <NavLink
-                          to={item.url}
-                          className={cn(
-                            "flex items-center gap-3 px-3 py-3 rounded-lg transition-all duration-300",
-                            active 
-                              ? "bg-gradient-card border border-accent/30 text-accent" 
-                              : "hover:bg-glass/50 hover:text-accent-foreground text-muted-foreground"
-                          )}
-                        >
-                          <item.icon className="w-5 h-5" />
-                          {open && <span className="font-medium text-sm">{item.title}</span>}
-                        </NavLink>
-                      </SidebarMenuButton>
-                    </SidebarMenuItem>
+                  <SidebarMenuItem key={item.title}>
+                    <NavLink
+                      to={item.url}
+                      className={cn(
+                        "flex items-center gap-3 px-3 py-3 rounded-lg transition-all duration-300",
+                        active 
+                          ? "bg-gradient-card border border-accent/30 text-accent" 
+                          : "hover:bg-glass/50 hover:text-accent-foreground text-muted-foreground"
+                      )}
+                    >
+                      <item.icon className="w-5 h-5" />
+                      {open && <span className="font-medium text-sm">{item.title}</span>}
+                    </NavLink>
+                  </SidebarMenuItem>
                   );
                 })}
               </SidebarMenu>
