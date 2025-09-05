@@ -11,6 +11,7 @@ import Orders from "./pages/Orders";
 import OrderDetail from "./pages/OrderDetail";
 import Vendors from "./pages/Vendors";
 import Moderation from "./pages/Moderation";
+import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +33,7 @@ const App = () => (
                 <Route path="orders/:id" element={<OrderDetail />} />
                 <Route path="vendors" element={<Vendors />} />
                 <Route path="moderation" element={<Moderation />} />
+                <Route path="chat" element={<Chat />} />
               </Route>
               <Route path="*" element={<NotFound />} />
             </Routes>
