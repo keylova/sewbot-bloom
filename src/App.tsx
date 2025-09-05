@@ -12,6 +12,7 @@ import OrderDetail from "./pages/OrderDetail";
 import Vendors from "./pages/Vendors";
 import Moderation from "./pages/Moderation";
 import Chat from "./pages/Chat";
+import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
                 <Route path="vendors" element={<Vendors />} />
                 <Route path="moderation" element={<Moderation />} />
                 <Route path="chat" element={<Chat />} />
+                <Route path="settings" element={<Settings />} />
               </Route>
               <Route path="*" element={<NotFound />} />
             </Routes>
